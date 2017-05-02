@@ -1,6 +1,7 @@
 var	margin = {top: 30, right: 20, bottom: 30, left: 50},
     width = 400 - margin.left - margin.right,
-    height = 220 - margin.top - margin.bottom,
+    height = 220 - margin.top - margin.bottom;
+
     radius = Math.min(width, height) / 2;
 
 var	chart2 = d3.select("#pie-chart")
