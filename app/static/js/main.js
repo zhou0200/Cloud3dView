@@ -1,8 +1,14 @@
-var svg = d3.select("svg"),
-    margin = {top: 20, right: 20, bottom: 30, left: 40},
-    width = +svg.attr("width") - margin.left - margin.right,
-    height = +svg.attr("height") - margin.top - margin.bottom,
-    g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+// Set the dimensions of the canvas / graph
+var	margin = {top: 30, right: 20, bottom: 30, left: 50},
+    width = 400 - margin.left - margin.right,
+    height = 220 - margin.top - margin.bottom;
+
+var	chart1 = d3.select("#stack-chart")
+    .append("svg:svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+    .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 var x = d3.scaleBand()
     .rangeRound([0, width])
@@ -29,7 +35,7 @@ d3.csv("data_wu.csv", function(d, i, columns) {
     y.domain([0, d3.max(data, function(d) { return d.total; })]).nice();
     z.domain(keys);
 
-    g.append("g")
+    chart1.append("g")
         .selectAll("g")
         .data(d3.stack().keys(keys)(data))
         .enter().append("g")
@@ -42,12 +48,12 @@ d3.csv("data_wu.csv", function(d, i, columns) {
         .attr("height", function(d) { return y(d[0]) - y(d[1]); })
         .attr("width", x.bandwidth());
 
-    g.append("g")
+    chart1.append("g")
         .attr("class", "axis")
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x));
 
-    g.append("g")
+    chart1.append("g")
         .attr("class", "axis")
         .call(d3.axisLeft(y).ticks(null, "s"))
         .append("text")
@@ -59,7 +65,7 @@ d3.csv("data_wu.csv", function(d, i, columns) {
         .attr("text-anchor", "start")
         .text("Thousands");
 
-    var legend = g.append("g")
+    var legend = chart1.append("g")
         .attr("font-family", "sans-serif")
         .attr("font-size", 10)
         .attr("text-anchor", "end")

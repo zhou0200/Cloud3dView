@@ -1,8 +1,14 @@
-var svg = d3.select("svg"),
-    width = +svg.attr("width"),
-    height = +svg.attr("height"),
-    radius = Math.min(width, height) / 2,
-    g = svg.append("g").attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+var	margin = {top: 30, right: 20, bottom: 30, left: 50},
+    width = 400 - margin.left - margin.right,
+    height = 220 - margin.top - margin.bottom,
+    radius = Math.min(width, height) / 2;
+
+var	chart2 = d3.select("#pie-chart")
+    .append("svg:svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+    .append("g")
+    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
 var color = d3.scaleOrdinal(["#FFA07A", "#87CEEB", "#FF8C00"]);
 
@@ -24,7 +30,7 @@ d3.csv("data.csv", function(d) {
 }, function(error, data) {
   if (error) throw error;
 
-  var arc = g.selectAll(".arc")
+  var arc = chart2.selectAll(".arc")
     .data(pie(data))
     .enter().append("g")
       .attr("class", "arc");
