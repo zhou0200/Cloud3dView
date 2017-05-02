@@ -1,0 +1,32 @@
+[
+    [
+        {
+            "x": "Accum. Saving YTD",
+            "y": 10
+        },
+        {
+            "x": "Annualized Saving",
+            "y": 30
+        }
+    ],
+    [
+        {
+            "x": "Accum. Saving YTD",
+            "y": 190
+        },
+        {
+            "x": "Annualized Saving",
+            "y": 450
+        }
+    ],
+    [
+        {
+            "x": "Accum. Saving YTD",
+            "y": 20
+        },
+        {
+            "x": "Annualized Saving",
+            "y": 20
+        }
+    ]
+]
