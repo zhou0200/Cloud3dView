@@ -33,7 +33,7 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <script src="https://d3js.org/d3.v4.min.js"></script>
+
     <script type="text/javascript" src="http://mbostock.github.com/d3/d3.js"></script>
     <script type="text/javascript" src="../static/js/gauge.js"></script>
     <script type="text/javascript" src="../static/js/gauge_drawing.js"></script>
@@ -122,42 +122,35 @@
     <!-- About -->
        <div class="dashboard" id="dashboard">
 
-       <div class="col-xs-4" id="stackedchart">
-       <style>
-       .axis .domain {
-        /*display: none;*/
-       }
-       </style>
-       <div width="300" height="240" id="stack-chart"></div>
-       <script src="https://d3js.org/d3.v4.min.js"></script>
-       <script src="../static/js/main.js"></script>
-       <link rel="stylesheet" href="../static/css/main.css">
-       <br><br>
-       <div class="boxed1">
-           S$ Your Year-to_Date Energy Saving is <u>$231K</u> <br><br>
-           Annualized Saving is <u>$493K</u>
-       </div>
-       </div>
+           <div class="col-xs-4">
+               <div id="stack-chart"></div>
+               <br><br>
+               <div class="boxed1">
+                   S$ Your Year-to_Date Energy Saving is <u>$231K</u> <br><br>
+                   Annualized Saving is <u>$493K</u>
+               </div>
+           </div>
 
 
-       <div class="col-xs-4" id="gauge">
-       <span id="pueGaugeContainer"></span>
-       <br><br><br>
-       <div class="boxed2">
-           Your current PUE is : <u>1.75</u> <br>
-           (Power Usage Effectiveness)
-       </div>
+           <div class="col-xs-4">
+               <span id="pueGaugeContainer"></span>
+               <br><br><br>
+               <div class="boxed2">
+                   Your current PUE is : <u>1.75</u> <br>
+                   (Power Usage Effectiveness)
+               </div>
 
-       </div>
+           </div>
 
-        <div class="col-xs-4" id="pie-chart" width="300" height="240">
-        <script type="text/javascript" src="../static/js/piechart_drawing.js"></script>
-            <br><br><br>
-        <div class="boxed3">
-           Your current Energy Consumption: <br>
-           % breakdown
-        </div>
-        </div>
+            <div class="col-xs-4">
+                <div id="pie-chart"></div>
+
+                    <br><br><br>
+                <div class="boxed3">
+                   Your current Energy Consumption: <br>
+                   % breakdown
+                </div>
+            </div>
        </div>
 
 
@@ -241,7 +234,9 @@
         // Enable map zooming with mouse scroll when the user clicks the map
     $('.map').on('click', onMapClickHandler);
     </script>
-
+   <script src="https://d3js.org/d3.v4.min.js"></script>
+   <script src="../static/js/main.js"></script>
+   <script type="text/javascript" src="../static/js/piechart_drawing.js"></script>
 </body>
 
 </html>

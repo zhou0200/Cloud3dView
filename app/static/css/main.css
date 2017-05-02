@@ -38,11 +38,11 @@
 .slogan{
         font-size: 13px;
         margin-left:15px;
-
-
 }
+
 .dashboard{
-   width: 100%;margin-left: 100px;
+   width: 100%;
+   margin: 0 50px 0 50px;
 }
 
 /*.left {*/
@@ -67,7 +67,6 @@ body{
     height:100%;
     border: 2px solid black ;
     text-align: center;
-    margin-left: 50px;
 }
 
 .boxed2 {
@@ -78,7 +77,6 @@ body{
     height:100%;
     border: 2px solid black ;
     text-align: center;
-
 }
 
 .boxed3 {
@@ -89,9 +87,6 @@ body{
     height:100%;
     border: 2px solid black ;
     text-align: center;
-    margin-left: 80px;
-
-
 }
 
 .arc text {
@@ -101,5 +96,9 @@ body{
 
 .arc path {
   stroke: #fff;
+}
+
+.col-xs-4 {
+    text-align: center;
 }
 
