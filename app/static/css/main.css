@@ -22,3 +22,57 @@
     background: yellow;
     box-shadow: 2px 2px 1px #888;
 }
+.logo{
+    margin-left:27px;
+}
+.slogan{
+        font-size: 13px;
+        margin-left:15px;
+
+
+}
+
+.dashboard{
+   width: 100%;
+}
+
+.left {
+    float:left;width:100px;margin-left:165px;
+}​
+.rignt{
+     float:right;width:100px;
+ }
+.center{
+     margin:auto;width:100px;
+}
+body{
+                font: 10px arial;
+}
+
+.boxed1 {
+    font-size: 16px;
+    color:black;
+    font-family: "Arial Black";
+    width:300px;
+    height:100%;
+    border: 2px solid black ;
+}
+
+.boxed2 {
+    font-size: 16px;
+    color:black;
+    font-family: "Arial Black";
+    width:225px;
+    height:100%;
+    border: 2px solid black ;
+}
+
+.arc text {
+  font: 10px sans-serif;
+  text-anchor: middle;
+}
+
+.arc path {
+  stroke: #fff;
+}
+
