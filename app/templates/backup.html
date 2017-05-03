@@ -377,3 +377,38 @@
 </body>
 
 </html>
+
+
+
+<script>
+    $(document).ready(function(){
+        $("#model_view_side").show();
+        $("#heat_view_side").hide();
+        $("#model_view_top").hide();
+    });
+</script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+        $("#toggle1").click(function(){
+             $("#model_view_side").show();
+             $("#heat_view_side").hide();
+             $("#model_view_top").hide();
+             $('#toggle1').addClass('active');
+             $('#toggle2').removeClass('active');
+
+
+        });
+        $("#toggle2").click(function(){
+             $("#heat_view_side").show();
+             $("#model_view_side").hide();
+             $('#toggle2').addClass('active');
+             $('#toggle1').removeClass('active');
+             $('#toggle3:active')
+
+
+        });
+
+        });
+    </script>
