@@ -7,9 +7,55 @@
 }
 .model_views{
     width:700px;
+    height:380px;
 }
 
 .btn-rounded{
     border-radius: 15px;
 }
 
+.boxed4{
+    font-size: 14px;
+    color:black;
+    font-family: "Arial Black";
+    width:300px;
+    height:100%;
+    border: 2px solid black ;
+    text-align: center;
+    padding: 0;
+    display: block;
+    margin: 0 auto;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.boxed5{
+    font-size: 14px;
+    color:black;
+    font-family: Arial;
+    width:310px;
+    height:100%;
+    border: 2px solid black ;
+    text-align: left;
+    padding: 0;
+    display: block;
+    margin: 0 auto;
+    max-height: 100%;
+    max-width: 100%;
+    margin-left: 25px;
+}
+
+.container-table{
+    margin-left: 15px;
+}
+
+.progress.active .progress-bar {
+    -webkit-transition: none !important;
+
+}
+
+.progressBar{
+    width:350px;
+    margin-left: 40px;
+
+}
