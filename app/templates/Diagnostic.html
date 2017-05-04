@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Stylish Portfolio - Start Bootstrap Theme</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../static/css/theme_css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../static/css/theme_css/stylish-portfolio.css" rel="stylesheet">
+
+    <!-- Custom Header CSS -->
+    <link href="../static/css/header_style.css" rel="stylesheet">
+    <link href="../static/css/main.css" rel="stylesheet">
+    <link href="../static/css/monitoring.css" rel="stylesheet">
+
+
+
+    <!-- Custom Fonts -->
+    <link href="../static/font/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script type="text/javascript" src="http://mbostock.github.com/d3/d3.js"></script>
+    <script type="text/javascript" src="../static/js/gauge.js"></script>
+    <script type="text/javascript" src="../static/js/gauge_drawing.js"></script>
+    <!-- Button Loading Staus -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+
+
+</head>
+
+
+
+
+<body>
+   <!-- Header Starts -->
+		<header>
+		  <div class="container">
+			<div class="row">
+			  <div class="col-md-4 col-sm-4">
+				<div class="logo">
+                    <img class="logo" src="../static/img/logo.png">
+				</div><br>
+                  <div class="slogan">
+                      <b><i>Your Savings, Your Earnings</i></b>
+                  </div>
+			  </div>
+
+			  <div class="col-md-5 col-md-offset-3 col-sm-6 col-sm-offset-2">
+                    <br><br><br>
+					<form class="form-inline" role="form">
+					  <div class="form-group">
+						<input type="text" class="form-control" id="search" placeholder="Type Something...">
+					  </div>
+					  <button type="submit" class="btn btn-default">Search</button>
+					</form>
+
+			  </div>
+			</div>
+		  </div>
+		</header>
+        <br>
+		<!-- Navigation bar starts -->
+
+		<div class="navbar bs-docs-nav" role="banner">
+		  <div class="container">
+		   <div class="navbar-header">
+			 <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+				 <span class="sr-only">Toggle navigation</span>
+				 <span class="icon-bar"></span>
+				 <span class="icon-bar"></span>
+				 <span class="icon-bar"></span>
+			 </button>
+		   </div>
+
+			  <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+				<ul class="nav navbar-nav">
+				<li><a href="customerJourney.html">Home</a></li>
+				<li><a href="dashboard.html">Dashboard</a></li>
+				<li><a href="monitoring.html">Monitoring</a></li>
+                <li><a href="Diagnostic.html">Diagnostic</a></li>
+				<li><a href="simulation.html">CFD Simulation</a></li>
+				<li><a href="optimization.html">AI Optimization</a></li>
+
+				  <!-- Refer Bootstrap navbar doc -->
+
+				  <li class="dropdown">
+					 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings <b class="caret"></b></a>
+					 <ul class="dropdown-menu">
+					     <li><a href="blog-2.html">Profile</a></li>
+					     <li><a href="blog-4.html">User Account</a></li>
+                         <li><a href="blog-single.html">Log Out</a></li>
+
+					 </ul>
+                  </li>
+                    <li><a href="">Welcome: <u><i>Admin </i></u></a></li>
+
+				</ul>
+			  </nav>
+			 </div>
+		  </div>
+
+        <!-- Navigation bar ends -->
+       <div class="dashboard-background" id="dashboard-background">
+       <img src="../static/img/diagnostic_view.png">
+       </div>
+       <br><br><br>
+
+   <div class="item row">
+
+        <div class="col-xs-4">
+        <div class="text-title">
+        <h5>Key Parameter Monitoring</h5><br>
+            <font size="2.5">Duration Selection</font> &nbsp;&nbsp;&nbsp;
+        <select id="select-time-zone" onchange="draw_curve()">
+        <option value="0" onchange="draw_curve()">Last 24 Hours</option>
+        <option value="1">Last Week</option>
+        <option value="2">Last Month</option>
+        </select>
+        </div>
+        <br><br><br><br>
+
+        <div class="curve_chart">
+        <div id="chart_monitor_1"></div>
+        <div class="bar" style="height: 20px"></div>
+        <div id="chart_monitor_2"></div>
+        <div class="bar" style="height: 20px"></div>
+        <div id="chart_monitor_3"></div>
+        <div class="bar" style="height: 20px"></div>
+        <script src="//d3js.org/d3.v4.min.js"></script>
+        <script src="../static/js/curve-chart.js"></script>
+        <!-- status charts -->
+        <br><br><br><br>
+        </div>
+        </div>
+
+    <!-- head title and top buttons for model/heat view -->
+    <div class="col-xs-8">
+        <div class="head-title"><h4>The diagnostic is based on Cloud-based Analytics engine</h4>
+        </div><br>
+
+        <script type="text/javascript">
+        $(function() { <!--button loading status-->
+            $(".btn").click(function(){
+                $(this).button('loading').delay(1000).queue(function() {
+                    $(this).button('reset');
+                    $(this).dequeue();
+                });
+            });
+        });
+        </script>
+
+        <div>
+            <!-- monitoring real time graphs -->
+            <div class="col-xs-10">
+                <div class="pics">
+                    <div class="active_view" id="active_view"><img class="model_views" id="model_views" src="../static/img/Diagnostic/Diag.JPG">
+                    </div>
+                </div>
+            </div>
+
+            <!-- side buttons for top/side/floor view -->
+
+                <br><br><br><br><br>
+        </div>
+    </div>
+</body>
+
+
+</html>
