@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Stylish Portfolio - Start Bootstrap Theme</title>
+    <title>Optimization</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../static/css/theme_css/bootstrap.min.css" rel="stylesheet">
@@ -20,6 +20,8 @@
     <!-- Custom Header CSS -->
     <link href="../static/css/header_style.css" rel="stylesheet">
     <link href="../static/css/main.css" rel="stylesheet">
+    <link href="../static/css/optimization.css" rel="stylesheet">
+
 
 
     <!-- Custom Fonts -->
@@ -37,9 +39,6 @@
     <script type="text/javascript" src="http://mbostock.github.com/d3/d3.js"></script>
     <script type="text/javascript" src="../static/js/gauge.js"></script>
     <script type="text/javascript" src="../static/js/gauge_drawing.js"></script>
-
-
-
 
 
 </head>
@@ -119,14 +118,214 @@
        </div>
        <br><br><br>
 
+    <div class="item row">
+
+	<div class="col-xs-4">
+		<div class="text-title">
+			<h5>Optimization Control Parameter Setting</h5><br><br>
 
 
+            <div class="boxed4">
+                1. Change the mode to <u>Program Mode</u> for optimization engine to take control <br><br>
+                3. Click <u>Start Optimization Cycle</u> Button<br>
+            </div>
+            <br>
+
+
+
+            <form class="form-horizontal">
+              <div class="table-responsive container-table">
+                <table class="table table-bordered table-striped table-highlight">
+                  <thead >
+                    <th style="width: 45%">Name</th>
+                    <th style="width: 20%">Value</th>
+                    <th style="width: 18%">Set Point</th>
+                    <th style="width: 19%">Mode</th>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><input type="text" class="form-control" id="form-control_1_1" value="PCU1 Outlet Temp" /></td>
+                      <td><input type="text" class="form-control" id="form-control_1_2" value="23.1" /></td>
+                      <td><input type="text" class="form-control" id="form-control_1_3" value="22" /></td>
+                      <td>
+                        <select class="form-control" id="form-control_1_4">
+                                        <option selected>Auto</option>
+                                        <option>Manual</option>
+                        </select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><input type="text" class="form-control" id="form-control_2_1" value="PCU2 Outlet Temp" /></td>
+                      <td><input type="text" class="form-control" id="form-control_2_2" value="22.2" /></td>
+                      <td><input type="text" class="form-control"  id="form-control_2_3" value="22" /></td>
+                      <td>
+                        <select class="form-control" id="form-control_2_4">
+                                        <option>Auto</option>
+                                        <option selected>Manual</option>
+                        </select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><input type="text" class="form-control" id="form-control_3_1" value="PCU3 Outlet Temp" /></td>
+                      <td><input type="text" class="form-control"  id="form-control_3_2" value="21.8" /></td>
+                      <td><input type="text" class="form-control" id="form-control_3_3" value="22" /></td>
+                      <td>
+                        <select class="form-control" id="form-control_3_4">
+                                        <option>Auto</option>
+                                        <option selected>Manual</option>
+                        </select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><input type="text" class="form-control" id="form-control_4_1" value="PCU1 Outlet Pressure" /></td>
+                      <td><input type="text" class="form-control" id="form-control_4_2" value="75.5%" /></td>
+                      <td><input type="text" class="form-control" id="form-control_4_3" value="73%" /></td>
+                      <td>
+                        <select class="form-control" id="form-control_4_4">
+                                        <option selected>Auto</option>
+                                        <option >Manual</option>
+                        </select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><input type="text" class="form-control" id="form-control_5_1" value="PCU2 Outlet Pressure" /></td>
+                      <td><input type="text" class="form-control" id="form-control_5_2" value="76%" /></td>
+                      <td><input type="text" class="form-control" id="form-control_5_3" value="76%" /></td>
+                      <td>
+                        <select class="form-control" id="form-control_5_4">
+                                        <option selected>Auto</option>
+                                        <option >Manual</option>
+                        </select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><input type="text" class="form-control" id="form-control_6_1" value="PCU3 Outlet Pressure" /></td>
+                      <td><input type="text" class="form-control" id="form-control_6_1" value="77%" /></td>
+                      <td><input type="text" class="form-control" id="form-control_6_3" value="75%" /></td>
+                      <td>
+                        <select class="form-control" id="form-control_6_4">
+                                        <option >Auto</option>
+                                        <option selected>Manual</option>
+                        </select>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </form>
+            </div>
+
+            <script type="text/javascript">
+
+		    </script>
+            <div>
+			<button class="btn btn-danger" id="controls">Commit Controls</button>&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="btn btn-success" id="simulation">Start Simulation</button></div> <br>
+
+        <!--progress bar loading-->
+        <div class="progressBar" id="progressBar" style="display:none" >
+            <div class="progress progress-striped active" >
+            <div class="progress-bar progress-bar-success " style="width:0%"></div>
+            </div>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script>
+         $(document).ready(function(){
+
+             $("#controls").click(function(){
+                 $("#progressBar").hide();
+            });
+
+             $("#simulation").click(function(){
+                 $("#progressBar").show();
+            });
+
+            $(".progress-bar").animate({
+                width: "100%"
+            }, 10000);
+
+         });
+        </script>
+
+		<br><br><br><br>
+
+		<br><br><br><br>
+
+	</div>
+
+
+    <!-- system status -->
+    <div class="col-xs-8">
+
+    <h5>Optimization Cycle</h5><br>
+
+    <font size="2.5">Duration Selection</font> &nbsp;&nbsp;&nbsp;
+    <select id="select-duration">
+    <option value="0" >Last 24 Hours</option>
+    <option value="1">Last Week</option>
+    <option value="2">Last Month</option>
+    </select>
+
+    <br><br><br>
+
+    <div class="stepwizard">
+    <div class="stepwizard-row">
+    <div class="stepwizard-step">
+        <button type="button" class="btn btn-danger btn-circle">1</button>
+        <p>Training</p>
+    </div>
+    <div class="stepwizard-step">
+        <button type="button" class="btn btn-default btn-circle">2</button>
+        <p>Optimization</p>
+    </div>
+    <div class="stepwizard-step">
+        <button type="button" class="btn btn-warning btn-circle" disabled="disabled">3</button>
+        <p>Pilot</p>
+    </div>
+        <div class="stepwizard-step">
+        <button type="button" class="btn btn-default btn-circle" disabled="disabled">4</button>
+        <p>Execution</p>
+    </div>
+        <div class="stepwizard-step">
+        <button type="button" class="btn btn-success btn-circle" disabled="disabled">5</button>
+        <p>Result</p>
+    </div>
+    </div>
+
+    </div>
+
+
+    <div class="op-status">
+    <div class="boxed5 col-xs-6">
+        <div align="center"><font size="3"><i><b><u>Pilot(Simulation) Result</u></b></i></font></div><br>
+        <i><b><u>PUE Reduction</u></b>: XYZ Super Computer Data Center <br><br>
+        <b><u>Over-heating</u></b>: 1 ABC Road, Singapore 202356 <br><br>
+        <b><u>IT Saving</u></b>: 800 kWh<br><br>
+        <b><u>Cooling Saving</u></b>: 800 kWh</i><br><br><br><br>
+        <img id="op_01" src="../static/img/op_01.png">
+    </div>
+
+    <div class="boxed5 col-xs-6">
+        <div align="center"><font size="3"><i><b><u>Execution Result</u></b></i></font></div><br>
+&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<i><b><u>Average PUE Reduction</u></b>: 2%<br><br>
+&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;<b><u>Accum. IT Saving ($)</u></b>: No <br><br>
+&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;<b><u>Accum. Cooling Saving ($)</u></b>: k$ 10 <br><br>
+&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;<b><u>Accum. Total Saving ($)</u></b>: k$ 231</i><br><br><br><br><br>
+          <img id="op_02" src="../static/img/op_02.png">
+
+    </div>
+    </div>
+
+    </div>
 
     <!-- jQuery -->
     <script src="../static/js/theme_js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="../static/js/theme_js/bootstrap.min.js"></script>
+    <script src="../static/js/optimization.js"></script>
+
 
     <!-- Custom Theme JavaScript -->
     <script>

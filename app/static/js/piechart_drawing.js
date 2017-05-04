@@ -1,12 +1,12 @@
-var	margin = {top: 30, right: 20, bottom: 30, left: 50},
-    width = 400 - margin.left - margin.right,
-    height = 220 - margin.top - margin.bottom,
-    radius = Math.min(width, height) / 2;
+var	pie_margin = {top: 30, right: 5, bottom: 10, left: 15},
+    pie_width = 350 - pie_margin.left - pie_margin.right,
+    pie_height = 220 - pie_margin.top - pie_margin.bottom,
+    pie_radius = Math.min(pie_width, pie_height) / 2;
 
 var	chart2 = d3.select("#pie-chart")
     .append("svg:svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
+    .attr("width", pie_width + pie_margin.left + pie_margin.right)
+    .attr("height", pie_height + pie_margin.top + pie_margin.bottom)
     .append("g")
     .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
@@ -17,12 +17,12 @@ var pie = d3.pie()
     .value(function(d) { return d.population; });
 
 var path = d3.arc()
-    .outerRadius(radius - 10)
+    .outerRadius(pie_radius - 10)
     .innerRadius(0);
 
 var label = d3.arc()
-    .outerRadius(radius - 40)
-    .innerRadius(radius - 40);
+    .outerRadius(pie_radius - 40)
+    .innerRadius(pie_radius - 40);
 
 d3.csv("data.csv", function(d) {
   d.population = +d.population;

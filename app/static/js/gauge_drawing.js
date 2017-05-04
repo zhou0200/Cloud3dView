@@ -9,7 +9,7 @@
 			{
 				var config =
 				{
-					size: 240,
+					size: 210,
 					label: label,
 					min: undefined != min ? min : 1,
 					max: undefined != max ? max : 3,
