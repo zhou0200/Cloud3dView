@@ -128,187 +128,199 @@
 
    <div class="item row">
 
-    <div class="col-xs-4">
+        <div class="col-xs-4">
         <div class="text-title">
         <h5>Key Parameter Monitoring</h5><br>
             <font size="2.5">Duration Selection</font> &nbsp;&nbsp;&nbsp;
-        <select>
-        <option value="last 24 hours">Last 24 Hours</option>
-        <option value="last week">Last Week</option>
-        <option value="last month">Last Month</option>
+        <select id="select-time-zone" onchange="draw_curve()">
+        <option value="0" onchange="draw_curve()">Last 24 Hours</option>
+        <option value="1">Last Week</option>
+        <option value="2">Last Month</option>
         </select>
         </div>
         <br><br><br><br>
 
 
+        <div class="curve_chart">
+        <div id="chart_monitor_1"></div>
+        <div class="bar" style="height: 20px"></div>
+        <div id="chart_monitor_2"></div>
+        <div class="bar" style="height: 20px"></div>
+        <div id="chart_monitor_3"></div>
+        <div class="bar" style="height: 20px"></div>
+        <script src="//d3js.org/d3.v4.min.js"></script>
+        <script src="../static/js/curve-chart.js"></script>
         <!-- status charts -->
-        <div class="boxed1">
-                   S$ Your Year-to_Date Energy Saving is <u>$231K</u> <br><br>
-                   Annualized Saving is <u>$493K</u>
-        </div>
         <br><br><br><br>
-
-
-        <div class="boxed1">
-                   S$ Your Year-to_Date Energy Saving is <u>$231K</u> <br><br>
-                   Annualized Saving is <u>$493K</u>
         </div>
-        <br><br><br><br>
-
-        <div class="boxed1">
-                   S$ Your Year-to_Date Energy Saving is <u>$231K</u> <br><br>
-                   Annualized Saving is <u>$493K</u>
-        </div>
-        <br><br><br><br>
-
     </div>
 
     <!-- head title and top buttons for model/heat view -->
     <div class="col-xs-8">
-    <div class="head-title"><h4>DATA CENTER HEAT MAP</h4></div><br>
-    <div class="buttons" align="center">
-       <button type="button" id="toggle1"  class="btn btn-primary active" data-loading-text="Loading ...">Model View</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-       <button type="button" id="toggle2"  class="btn btn-primary" data-loading-text="Loading ...">Heat View</button>
+		<div class="head-title"><h4>Monitoring Environment</h4></div><br>
+		<div class="buttons" align="center">
+			<button type="button" id="toggle1"  class="btn btn-primary active" data-loading-text="Loading ...">Model View</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<button type="button" id="toggle2"  class="btn btn-primary " data-loading-text="Loading ...">Heat View</button>
 
-    </div><br><br><br>
+		</div><br><br><br>
 
-    <script type="text/javascript">
-    $(function() { <!--button loading status-->
-        $(".btn").click(function(){
-            $(this).button('loading').delay(1000).queue(function() {
-                $(this).button('reset');
-                $(this).dequeue();
+		<script type="text/javascript">
+            $(function() { <!--button loading status-->
+                $(".btn").click(function(){
+                    $(this).button('loading').delay(1000).queue(function() {
+                        $(this).button('reset');
+                        $(this).dequeue();
+                    });
+                });
             });
-        });
-    });
-    </script>
+		</script>
 
-    <div>
-        <!-- monitoring real time graphs -->
-        <div class="col-xs-10">
-         <div class="pics">
+		<div>
+			<!-- monitoring real time graphs -->
+			<div class="col-xs-10">
+				<div class="pics">
 
-             <div class="active_view" id="active_view"><img class="model_views" id="model_views" src="../static/img/monitoring/Model_View_side.jpg"></div>
+                <div class="active_view" id="active_view"><img class="model_views" id="model_views" src="../static/img/monitoring/Model_View_side.jpg"></div>
 
-         </div>
+            </div>
+            </div>
 
-        </div>
+            <div class="col-xs-2">
+                <div class="side-buttons">
+                <br><br><br><br><br>
+                <div><button type="button" id="toggleA" class="btn btn-primary btn-block" data-loading-text="Loading ...">Top View</button></div><br><br>
+                <div><button type="button" id="toggleB" class="btn btn-primary btn-block active" data-loading-text="Loading ...">Side View</button></div><br><br>
+                <div><button type="button" id="toggleC" class="btn btn-primary btn-block" data-loading-text="Loading ...">Floor View</button></div>
+			    </div>
+            </div>
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script>
-        $(document).ready(function(){
-        $("#toggle1").click(function(){
-             $('#toggle1').addClass('active');
-             $('#toggle2').removeClass('active');
-             if(isActive($("#toggleA"))){
-                 $(".model_views").attr("src","../static/img/monitoring/Model_View_top.jpg");
-             }
-             else if(isActive($("#toggleB"))){
-                 $(".model_views").attr("src","../static/img/monitoring/Model_View_side.jpg");
-
-             }
-             else{
-                 $(".model_views").attr("src","../static/img/monitoring/Model_View_raisedfloor.jpg");
-
-             }
-
-        });
-
-        $("#toggle2").click(function(){
-             $('#toggle2').addClass('active');
-             $('#toggle1').removeClass('active');
-             if(isActive($("#toggleA"))){
-                 $(".model_views").attr("src","../static/img/monitoring/Heat_Mode_top.gif");
-             }
-             else if(isActive($("#toggleB"))){
-                 $(".model_views").attr("src","../static/img/monitoring/Heat_Mode_side.gif");
-
-             }
-             else{
-                 $(".model_views").attr("src","../static/img/monitoring/Heat_Mode_raised_floor.gif");
-
-             }
+            <!-- system status -->
+            <div class="system-info">
+            <div class="boxed5 col-xs-6">
+                <div align="center"><font size="3"><i><b><u>System Information:</u></b></i></font></div><br>
+                <i><b><u>Data Center Name</u></b>: XYZ Super Computer Data Center <br><br>
+                <b><u>Data Center Location</u></b>: 1 ABC Road, Singapore 202356 <br><br>
+                <b><u>IT Capacity</u></b>: 800 kWh<br><br>
+                <b><u>Cooling Capacity</u></b>: 800 kWh</i><br><br>
+            </div>
+            <div class="boxed5 col-xs-6">
+                <div align="center"><font size="3"><i><b><u>Monitoring Status:</u></b></i></font></div><br>
+&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; <i><b><u>Current PUE</u></b>: 2.2<br><br>
+&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;<b><u>Over-Heating</u></b>: No <br><br>
+&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;<b><u>IT Equipment</u></b>: Normal <br><br>
+&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;<b><u>Cooling Facility</u></b>: Over-Provisioning</i><br><br>
+&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;<b><u>Hot-Spot Identificaiton</u></b>: NO</i><br><br>
+            </div>
+            </div>
+            <br><br><br>
 
 
-        });
-
-        function isActive(elemnt){
-            result = elemnt.hasClass('active');
-            console.log(result);
-            return result;
-        }
-
-        });
-         </script>
-
-
-        <!-- side buttons for top/side/floor view -->
-        <div class="side-buttons">
-        <div class="col-xs-2">
-            <br><br><br><br><br>
-            <div><button type="button" id="toggleA" class="btn btn-primary btn-block" data-loading-text="Loading ...">Top View</button></div><br><br>
-            <div><button type="button" id="toggleB" class="btn btn-primary btn-block active" data-loading-text="Loading ...">Side View</button></div><br><br>
-            <div><button type="button" id="toggleC" class="btn btn-primary btn-block" data-loading-text="Loading ...">Floor View</button></div>
-
-        </div>
         </div>
     </div>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script>
-        $(document).ready(function(){
-        $("#toggleA").click(function(){
-             $('#toggleA').addClass('active');
-             $('#toggleB').removeClass('active');
-             $('#toggleC').removeClass('active');
-             if(isActive($("#toggle1"))){
-                 $(".model_views").attr("src","../static/img/monitoring/Model_View_top.jpg");
-             }
-             else{
-                 $(".model_views").attr("src","../static/img/monitoring/Heat_Mode_top.gif");
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+			<script>
+                $(document).ready(function(){
+                    $("#toggle1").click(function(){
+                        $('#toggle1').addClass('active');
+                        $('#toggle2').removeClass('active');
+                        if(isActive($("#toggleA"))){
+                            $(".model_views").attr("src","../static/img/monitoring/Model_View_top.jpg");
+                        }
+                        else if(isActive($("#toggleB"))){
+                            $(".model_views").attr("src","../static/img/monitoring/Model_View_side.jpg");
 
-             }
+                        }
+                        else{
+                            $(".model_views").attr("src","../static/img/monitoring/Model_View_raisedfloor.jpg");
 
-        });
+                        }
 
+                    });
 
-        $("#toggleB").click(function(){
-             $('#toggleB').addClass('active');
-             $('#toggleA').removeClass('active');
-             $('#toggleC').removeClass('active');
-             if(isActive($("#toggle1"))){
-                 $(".model_views").attr("src","../static/img/monitoring/Model_View_side.jpg");
-             }
-             else{
-                 $(".model_views").attr("src","../static/img/monitoring/Heat_Mode_side.gif");
+                    $("#toggle2").click(function(){
+                        $('#toggle2').addClass('active');
+                        $('#toggle1').removeClass('active');
+                        if(isActive($("#toggleA"))){
+                            $(".model_views").attr("src","../static/img/monitoring/Heat_Mode_top.gif");
+                        }
+                        else if(isActive($("#toggleB"))){
+                            $(".model_views").attr("src","../static/img/monitoring/Heat_Mode_side.gif");
 
-             }
+                        }
+                        else{
+                            $(".model_views").attr("src","../static/img/monitoring/Heat_Mode_raised_floor.gif");
 
-        });
-
-        $("#toggleC").click(function(){
-             $('#toggleC').addClass('active');
-             $('#toggleA').removeClass('active');
-             $('#toggleB').removeClass('active');
-             if(isActive($("#toggle1"))) {
-                 $(".model_views").attr("src", "../static/img/monitoring/Model_View_raisedfloor.jpg");
-             }
-             else{
-                 $(".model_views").attr("src","../static/img/monitoring/Heat_Mode_raised_floor.gif");
-
-             }
-        });
-
-        function isActive(elemnt){
-            result = elemnt.hasClass('active');
-            console.log(result);
-            return result;
-        }
-
-        });
-         </script>
+                        }
 
 
-    </div>
+                    });
+
+                    function isActive(elemnt){
+                        result = elemnt.hasClass('active');
+                        console.log(result);
+                        return result;
+                    }
+
+                });
+			</script>
+
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script>
+            $(document).ready(function(){
+                $("#toggleA").click(function(){
+                    $('#toggleA').addClass('active');
+                    $('#toggleB').removeClass('active');
+                    $('#toggleC').removeClass('active');
+                    if(isActive($("#toggle1"))){
+                        $(".model_views").attr("src","../static/img/monitoring/Model_View_top.jpg");
+                    }
+                    else{
+                        $(".model_views").attr("src","../static/img/monitoring/Heat_Mode_top.gif");
+
+                    }
+
+                });
+
+
+                $("#toggleB").click(function(){
+                    $('#toggleB').addClass('active');
+                    $('#toggleA').removeClass('active');
+                    $('#toggleC').removeClass('active');
+                    if(isActive($("#toggle1"))){
+                        $(".model_views").attr("src","../static/img/monitoring/Model_View_side.jpg");
+                    }
+                    else{
+                        $(".model_views").attr("src","../static/img/monitoring/Heat_Mode_side.gif");
+
+                    }
+
+                });
+
+                $("#toggleC").click(function(){
+                    $('#toggleC').addClass('active');
+                    $('#toggleA').removeClass('active');
+                    $('#toggleB').removeClass('active');
+                    if(isActive($("#toggle1"))) {
+                        $(".model_views").attr("src", "../static/img/monitoring/Model_View_raisedfloor.jpg");
+                    }
+                    else{
+                        $(".model_views").attr("src","../static/img/monitoring/Heat_Mode_raised_floor.gif");
+
+                    }
+                });
+
+                function isActive(elemnt){
+                    result = elemnt.hasClass('active');
+                    console.log(result);
+                    return result;
+                }
+
+            });
+		</script>
+
+
+	</div>
 
    </div>
 

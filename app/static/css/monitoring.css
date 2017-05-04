@@ -1,15 +1,56 @@
 .text-title{
-    text-align: center;
-}
+    margin-left:180px;
+;}
 
 .head-title{
     text-align: center;
 }
-.model_views{
-   width:700px;
+.model_views {
+    width: 740px;
+    height: 400px;
+    margin-left: 120px;
+    margin-bottom: 20px;
 }
-
+.side-buttons{
+   margin-left: 20px;
+}
 .btn-rounded{
    border-radius: 15px;
 }
 
+
+
+.axis--x path {
+    /*display: none;*/
+}
+
+.line {
+    fill: none;
+    stroke: steelblue;
+    stroke-width: 1.5px;
+}
+
+.curve_chart{
+    width:40px;
+}
+
+.boxed5{
+    font-size: 14px;
+    color:black;
+    font-family: Arial;
+    width:310px;
+    height:100%;
+    border: 2px solid black ;
+    text-align: left;
+    padding: 0;
+    display: block;
+    margin: 0 auto;
+    max-height: 100%;
+    max-width: 100%;
+    margin-left: 20px;
+}
+
+.system-info{
+    margin-left: 170px;
+
+}
