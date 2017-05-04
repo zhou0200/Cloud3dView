@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,6 +19,8 @@
     <!-- Custom Header CSS -->
     <link href="../static/css/header_style.css" rel="stylesheet">
     <link href="../static/css/main.css" rel="stylesheet">
+    <link href="../static/css/monitoring.css" rel="stylesheet">
+
 
 
     <!-- Custom Fonts -->
@@ -37,14 +38,18 @@
     <script type="text/javascript" src="http://mbostock.github.com/d3/d3.js"></script>
     <script type="text/javascript" src="../static/js/gauge.js"></script>
     <script type="text/javascript" src="../static/js/gauge_drawing.js"></script>
-
-
+    <!-- Button Loading Staus -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 
 
 
 </head>
 
-<body onload="initialize()">
+
+
+
+<body>
    <!-- Header Starts -->
 		<header>
 		  <div class="container">
@@ -94,7 +99,6 @@
 				<li><a href="simulation.html">CFD Simulation</a></li>
 				<li><a href="optimization.html">AI Optimization</a></li>
 
-
 				  <!-- Refer Bootstrap navbar doc -->
 
 				  <li class="dropdown">
@@ -115,93 +119,69 @@
 
         <!-- Navigation bar ends -->
        <div class="dashboard-background" id="dashboard-background">
-       <img src="../static/img/optimization.png">
+       <img src="../static/img/diagnostic.png">
        </div>
        <br><br><br>
 
+   <div class="item row">
 
+        <div class="col-xs-4">
+        <div class="text-title">
+        <h5>Key Parameter Monitoring</h5><br>
+            <font size="2.5">Duration Selection</font> &nbsp;&nbsp;&nbsp;
+        <select id="select-time-zone" onchange="draw_curve()">
+        <option value="0" onchange="draw_curve()">Last 24 Hours</option>
+        <option value="1">Last Week</option>
+        <option value="2">Last Month</option>
+        </select>
+        </div>
+        <br><br><br><br>
 
+        <div class="curve_chart">
+        <div id="chart_monitor_1"></div>
+        <div class="bar" style="height: 20px"></div>
+        <div id="chart_monitor_2"></div>
+        <div class="bar" style="height: 20px"></div>
+        <div id="chart_monitor_3"></div>
+        <div class="bar" style="height: 20px"></div>
+        <script src="//d3js.org/d3.v4.min.js"></script>
+        <script src="../static/js/curve-chart.js"></script>
+        <!-- status charts -->
+        <br><br><br><br>
+        </div>
+        </div>
 
-    <!-- jQuery -->
-    <script src="../static/js/theme_js/jquery.js"></script>
+    <!-- head title and top buttons for model/heat view -->
+    <div class="col-xs-8">
+        <div class="head-title"><h4>The diagnostic is based on Cloud-based Analytics engine</h4>
+        </div><br>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="../static/js/theme_js/bootstrap.min.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script>
-    // Closes the sidebar menu
-    $("#menu-close").click(function(e) {
-        e.preventDefault();
-        $("#sidebar-wrapper").toggleClass("active");
-    });
-    // Opens the sidebar menu
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#sidebar-wrapper").toggleClass("active");
-    });
-    // Scrolls to the selected menu item on the page
-    $(function() {
-        $('a[href*=#]:not([href=#],[data-toggle],[data-target],[data-slide])').click(function() {
-            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
-                var target = $(this.hash);
-                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-                if (target.length) {
-                    $('html,body').animate({
-                        scrollTop: target.offset().top
-                    }, 1000);
-                    return false;
-                }
-            }
+        <script type="text/javascript">
+        $(function() { <!--button loading status-->
+            $(".btn").click(function(){
+                $(this).button('loading').delay(1000).queue(function() {
+                    $(this).button('reset');
+                    $(this).dequeue();
+                });
+            });
         });
-    });
-    //#to-top button appears after scrolling
-    var fixed = false;
-    $(document).scroll(function() {
-        if ($(this).scrollTop() > 250) {
-            if (!fixed) {
-                fixed = true;
-                // $('#to-top').css({position:'fixed', display:'block'});
-                $('#to-top').show("slow", function() {
-                    $('#to-top').css({
-                        position: 'fixed',
-                        display: 'block'
-                    });
-                });
-            }
-        } else {
-            if (fixed) {
-                fixed = false;
-                $('#to-top').hide("slow", function() {
-                    $('#to-top').css({
-                        display: 'none'
-                    });
-                });
-            }
-        }
-    });
-    // Disable Google Maps scrolling
-    // See http://stackoverflow.com/a/25904582/1607849
-    // Disable scroll zooming and bind back the click event
-    var onMapMouseleaveHandler = function(event) {
-        var that = $(this);
-        that.on('click', onMapClickHandler);
-        that.off('mouseleave', onMapMouseleaveHandler);
-        that.find('iframe').css("pointer-events", "none");
-    }
-    var onMapClickHandler = function(event) {
-            var that = $(this);
-            // Disable the click handler until the user leaves the map area
-            that.off('click', onMapClickHandler);
-            // Enable scrolling zoom
-            that.find('iframe').css("pointer-events", "auto");
-            // Handle the mouse leave event
-            that.on('mouseleave', onMapMouseleaveHandler);
-        }
-        // Enable map zooming with mouse scroll when the user clicks the map
-    $('.map').on('click', onMapClickHandler);
-    </script>
+        </script>
 
+        <div>
+            <!-- monitoring real time graphs -->
+            <div class="col-xs-10">
+                <div class="pics">
+                    <div class="active_view" id="active_view"><img class="model_views" id="model_views" src="../static/img/Diagnostic/Diag.JPG">
+                    </div>
+                </div>
+            </div>
+
+            <!-- side buttons for top/side/floor view -->
+
+                <br><br><br><br><br>
+        </div>
+    </div>
 </body>
+
 
 </html>
