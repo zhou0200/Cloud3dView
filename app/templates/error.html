@@ -3,25 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <title>Login, Register form</title>
-  
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 
   <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
 
       <link rel="stylesheet" href="../static/css/index.css">
 
-  
+
 </head>
 
 <body>
-  
+
   <div class="login-box">
     <div class="lb-header">
       <a href="#" class="active" id="login-box-link">Login</a>
       <a href="#" id="signup-box-link">Sign Up</a>
     </div>
-    <div class="index-logo">
-        <img class="site-logo" src="../static/img/logo.png">
+    <div class="social-login">
+      <a href="#">
+        <i class="fa fa-facebook fa-lg"></i>
+        Login in with facebook
+      </a>
+      <a href="#">
+        <i class="fa fa-google-plus fa-lg"></i>
+        log in with Google
+      </a>
     </div>
 
     <form class="email-login" name="email-login" onsubmit="return validateForm()" method="post">
@@ -83,6 +90,7 @@
             }
             else {
                 alert("Please enter the correct username or password!");
+                window.location.replace("index.html");
 
             }
         }
