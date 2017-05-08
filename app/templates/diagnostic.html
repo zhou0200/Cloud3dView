@@ -36,9 +36,8 @@
 
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script type="text/javascript" src="http://mbostock.github.com/d3/d3.js"></script>
-    <script type="text/javascript" src="../static/js/gauge.js"></script>
-    <script type="text/javascript" src="../static/js/gauge_drawing.js"></script>
-
+    <script type="text/javascript" src="../../static/js/gauge.js"></script>
+    <script type="text/javascript" src="../../static/js/gauge_drawing.js"></script>
     <!-- Button Loading Staus -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
@@ -93,10 +92,10 @@
 
 			  <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
 				<ul class="nav navbar-nav">
-				<li><a href="customerJourney.html">Home</a></li>
+				<li><a href="home.html">Home</a></li>
 				<li><a href="dashboard.html">Dashboard</a></li>
 				<li><a href="monitoring.html">Monitoring</a></li>
-                <li><a href="Diagnostic.html">Diagnostic</a></li>
+                <li><a href="diagnostic.html">Diagnostic</a></li>
 				<li><a href="simulation.html">CFD Simulation</a></li>
 				<li><a href="optimization.html">AI Optimization</a></li>
 
@@ -120,14 +119,74 @@
 
         <!-- Navigation bar ends -->
        <div class="dashboard-background" id="dashboard-background">
-       <img src="../static/img/customer_journey.png">
-       <img src="../static/img/CustomerJourneyHome/customer_journey.jpg">
+       <img src="../static/img/diagnostic_view.png">
 
        </div>
        <br><br><br>
 
+   <div class="item row">
 
+        <div class="col-xs-4">
+        <div class="text-title">
+        <h5>Key Parameter Monitoring</h5><br>
+            <font size="2.5">Duration Selection</font> &nbsp;&nbsp;&nbsp;
+        <select id="select-time-zone" onchange="draw_curve()">
+        <option value="0" onchange="draw_curve()">Last 24 Hours</option>
+        <option value="1">Last Week</option>
+        <option value="2">Last Month</option>
+        </select>
+        </div>
+        <br><br><br><br>
 
+        <div class="curve_chart">
+        <div id="chart_monitor_1"></div>
+        <div class="bar" style="height: 20px"></div>
+        <div id="chart_monitor_2"></div>
+        <div class="bar" style="height: 20px"></div>
+
+        <script src="//d3js.org/d3.v4.min.js"></script>
+        <script src="../static/js/curve-chart.js"></script>
+        <!-- status charts -->
+        <br><br><br><br>
+        </div>
+    </div>
+
+    <!-- head title and top buttons for model/heat view -->
+    <div class="col-xs-8">
+        <div class="head-title"><h4>The diagnostic is based on Cloud-based Analytics engine</h4>
+        </div><br>
+        <style>
+            .head-title{
+                margin-left: 70px;
+            }
+        </style>
+
+        <script type="text/javascript">
+        $(function() { <!--button loading status-->
+            $(".btn").click(function(){
+                $(this).button('loading').delay(1000).queue(function() {
+                    $(this).button('reset');
+                    $(this).dequeue();
+                });
+            });
+        });
+        </script>
+
+        <div>
+            <!-- monitoring real time graphs -->
+            <div class="col-xs-10">
+                <div class="pics">
+                    <div class="active_view" id="active_view"><img class="model_views" id="model_views" src="../static/img/Diagnostic/Diag.JPG">
+                    </div>
+                </div>
+            </div>
+
+            <!-- side buttons for top/side/floor view -->
+
+                <br><br><br><br><br>
+        </div>
+    </div>
+   </div>
 </body>
-
 </html>
+
