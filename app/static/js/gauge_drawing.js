@@ -35,7 +35,10 @@
 			{
 				for (var key in gauges)
 				{
-					var value = getRandomValue(gauges[key])
+					var value = getRandomValue(gauges[key]);
+					var decimal_2= parseFloat(value).toFixed(2);
+                    document.getElementById("PUE").innerHTML = decimal_2;
+                    if(value != 1)
 					gauges[key].redraw(value);
 				}
 			}
@@ -49,6 +52,6 @@
 			function initialize()
 			{
 				createGauges();
-				setInterval(updateGauges, 5000);
+				setInterval(updateGauges, 3000);
 			}
 

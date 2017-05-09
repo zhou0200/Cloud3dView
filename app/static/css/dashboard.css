@@ -1,0 +1,64 @@
+.dashboard{
+  width: 100%;
+}
+
+.first-chart{
+}
+
+.second-chart{
+}
+
+.third-chart{
+}
+
+.boxed1 {
+    font-size: 16px;
+    color:black;
+    font-family:Arial;
+    width:300px;
+    height:100%;
+    border: 2px solid black ;
+    text-align: center;
+    padding: 0;
+    display: block;
+    margin: 0 auto;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.boxed2 {
+    font-size: 16px;
+    color:black;
+    font-family: Arial;
+    width:225px;
+    height:100%;
+    border: 2px solid black ;
+    text-align: center;
+    padding: 0;
+    display: block;
+    margin: 0 auto;
+    max-height: 100%;
+    max-width: 100%;
+
+}
+
+.boxed3 {
+    font-size: 16px;
+    color:black;
+    font-family: Arial;
+    width:225px;
+    height:100%;
+    border: 2px solid black ;
+    text-align: center;
+    padding: 0;
+    display: block;
+    margin: auto;
+    max-height: 100%;
+    max-width: 100%;
+
+}
+
+#PUE{
+    font-weight: bold;
+    text-decoration: underline;
+}

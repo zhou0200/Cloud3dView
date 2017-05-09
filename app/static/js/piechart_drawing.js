@@ -1,4 +1,4 @@
-var	pie_margin = {top: 30, right: 5, bottom: 10, left: 15},
+var	pie_margin = {top: 35, right: 5, bottom: 5, left: 15},
     pie_width = 350 - pie_margin.left - pie_margin.right,
     pie_height = 220 - pie_margin.top - pie_margin.bottom,
     pie_radius = Math.min(pie_width, pie_height) / 2;
