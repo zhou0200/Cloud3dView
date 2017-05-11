@@ -35,23 +35,9 @@
 	<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 	<![endif]-->
 
-	<script src="https://d3js.org/d3.v4.min.js"></script>
-	<script type="text/javascript" src="http://mbostock.github.com/d3/d3.js"></script>
-	<script type="text/javascript" src="../static/js/gauge.js"></script>
-	<script type="text/javascript" src="../static/js/gauge_drawing.js"></script>
-
 	<!-- Button Loading Staus -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-
-    <!-- Control Parameter Settings -->
-	<script type="text/javascript" src="../static/js/bootstrap-table.js"></script>
-    <script type="text/javascript" src="../static/js/bootstrap-table-cookie.js"></script>
-    <script type="text/javascript" src="../static/js/bootstrap-table-filter-control.js"></script>
-	<link href="../static/css/bootstrap-table.css" rel="stylesheet">
-
-
-
 
 
 </head>
@@ -147,21 +133,21 @@
 	<div class="col-xs-4">
 		<div class="text-title">
             <br><br><br><br><br>
-			<h5>Simulation Control Parameter Setting</h5><br><br>
+			<h5>Simulation Control Parameter Setting</h5><br><br><br>
 
 
             <div class="boxed4">
-                1. Change the mode to manual Mode <br><br>
-                2. Specify a <u>Set Point Value</u> under the Set Point Column <br><br>
-                3. Click <u>Start Simulation</u> Button<br>
+                &nbsp;1. Change the Mode to <u><b>Manual Mode</b></u> <br><br>
+                &nbsp;2. Specify a <u><b>Set Point Value</b></u> under the Set &nbsp;Point Column <br><br>
+                &nbsp;3. Click <u><b>Start Simulation</b></u> Button<br>
             </div>
-            <br><br><br><br>
+            <br><br><br>
 
 
 
             <form class="form-horizontal">
               <div class="table-responsive container-table">
-                <table class="table table-bordered table-striped table-highlight">
+                <table class="control-parameters table table-bordered table-striped table-highlight">
                   <thead >
                     <th style="width: 45%">Name</th>
                     <th style="width: 20%">Value</th>
@@ -241,36 +227,14 @@
             </form>
             </div>
 
+            <div class="add-parameters" align="left">
+            <button class="add-parameter" id="add-parameter">Add Parameters</button>
+            </div><br>
+
             <div>
 			<button class="btn btn-danger" id="controls">Commit Controls</button>&nbsp;&nbsp;&nbsp;&nbsp;
-            <button class="btn btn-success" id="simulation">Start Simulation</button></div> <br>
-
-        <!--progress bar loading-->
-        <div class="progressBar" id="progressBar" style="display:none" >
-            <div class="progress progress-striped active" >
-            <div class="progress-bar progress-bar-success " style="width:0%"></div>
-            </div>
-        </div>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script>
-         $(document).ready(function(){
-
-             $("#controls").click(function(){
-                 $("#progressBar").hide();
-                 $("#toggle_result").hide();
-            });
-
-             $("#simulation").click(function(){
-                 $("#progressBar").show();
-                 $("#toggle_result").show();
-             });
-
-             $(".progress-bar").animate({
-                width: "100%"
-             }, 10000);
-
-         });
-        </script>
+            <button class="btn btn-success" id="simulation">Start Simulation</button>
+            </div> <br>
 
 		<br><br><br><br>
 
@@ -281,11 +245,12 @@
 	<!-- head title and top buttons for model/heat view -->
 	<div class="col-xs-8">
 		<div class="head-title"><h4>Simulation Environment</h4></div><br>
-		<div class="buttons" align="center">
+		<div class="simulation-buttons">
 			<button type="button" id="toggle1"  class="btn btn-primary " data-loading-text="Loading ...">Model View</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			<button type="button" id="toggle2"  class="btn btn-primary active" data-loading-text="Loading ...">Heat View</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			<button type="button" id="toggle_result"  class="btn btn-success" data-loading-text="Loading ...">Simulation Result</button>
-		</div><br><br><br>
+            <button type="button" id="toggle_result"  class="btn btn-success" data-loading-text="Loading ...">Simulation Result</button>
+        </div>
+        <br><br>
 
 		<script type="text/javascript">
             $(function() { <!--button loading status-->
@@ -298,7 +263,63 @@
             });
 		</script>
 
-    <div>
+         <!--progress bar loading-->
+        <div class="progressBar" id="progressBar" style="display:none" >
+            <div class="progress progress-striped active" >
+            <div class="progress-bar progress-bar-success " style="width:0%"></div>
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script>
+         $(document).ready(function(){
+
+             $('.add-parameter').click(function(event){
+             event.preventDefault();
+
+             var newRow = $('<tr>'+
+                      '<td><input type="text" class="form-control" id="form-control_1_1_new" value="Add New Data" /></td>'+
+                      '<td><input type="text" class="form-control" id="form-control_1_2_new" value="Add New Data" /></td>'+
+                      '<td><input type="text" class="form-control" id="form-control_1_3_new" value="Add New Data" /></td>'+
+                      '<td>'+
+                      '<select class="form-control" id="form-control_1_4_new">'+
+                            '<option selected>Auto</option>'+
+                            '<option>Manual</option>'+
+                      '</select>'+
+                      '</td>'+
+                    '</tr>")');
+              console.log(true);
+             $('.control-parameters').append(newRow);
+
+
+             });
+
+             $("#controls").click(function(){
+                 $("#progressBar").hide();
+                 $("#toggle_result").hide();
+                 $('.simulation-buttons').css({
+                    'margin-left': '30%',
+                });
+            });
+
+             $("#simulation").click(function(){
+                 $("#progressBar").show();
+                 $("#toggle_result").show();
+                  $('.simulation-buttons').css({
+                    'margin-left': '20%',
+                });
+             });
+
+             $(".progress-bar").animate({
+                width: "100%"
+             }, 10000);
+
+         });
+        </script>
+
+
+
+
+        <div>
         <!-- monitoring real time graphs -->
         <div class="col-xs-10">
             <div class="pics">
@@ -308,10 +329,11 @@
             </div>
             <br><br>
         <!-- system status -->
+            <div class="system-info">
             <div class="boxed5 col-xs-6">
                 <div align="center"><font size="3"><i><b><u>System Information:</u></b></i></font></div><br>
-                <i><b><u>Data Center Name</u></b>: XYZ Super Computer Data Center <br><br>
-                <b><u>Data Center Location</u></b>: 1 ABC Road, Singapore 202356 <br><br>
+                <i><b><u>Data Center Name</u></b>: NSCC (National Supercomputing Center) Data Center <br><br>
+                <b><u>Data Center Location</u></b>: 12 Cresent Road, Singapore 202356 <br><br>
                 <b><u>IT Capacity</u></b>: 800 kWh<br><br>
                 <b><u>Cooling Capacity</u></b>: 800 kWh</i><br><br>
             </div>
@@ -321,6 +343,9 @@
                  &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;<b><u>Over-Heating</u></b>: No <br><br>
                  &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;<b><u>IT Saving</u></b>: k$ 10 <br><br>
                  &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;<b><u>Cooling Saving</u></b>: k$ 231</i><br><br>
+                 &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;<b><u>Total Saving</u></b>: k$ 241</i><br><br>
+
+            </div>
             </div>
             <br><br><br>
 
@@ -368,16 +393,18 @@
                  $("#toggle_result").click(function(){
                     $('#toggle1').removeClass('active');
                     $('#toggle2').removeClass('active');
-                    $(".model_views").attr("src","../static/img/simulation/Simulation_heat_side.gif");
+                    $('#toggle_result').addClass('active');
+
+                    $(".model_views").attr("src","../static/img/simulation/simulation_heat_side.gif");
                     if(isActive($("#toggleA"))){
-                        $(".model_views").attr("src","../static/img/simulation/Simulation_heat_top.gif");
+                        $(".model_views").attr("src","../static/img/simulation/simulation_heat_top.gif");
                     }
                     else if(isActive($("#toggleB"))){
-                        $(".model_views").attr("src","../static/img/simulation/Simulation_heat_side.gif");
+                        $(".model_views").attr("src","../static/img/simulation/simulation_heat_side.gif");
 
                     }
                     else{
-                        $(".model_views").attr("src","../static/img/simulation/Simulation_heat_raised_floor.gif");
+                        $(".model_views").attr("src","../static/img/simulation/simulation_heat_raised_floor.gif");
 
                     }
 
@@ -415,8 +442,12 @@
                 if(isActive($("#toggle1"))){
                     $(".model_views").attr("src","../static/img/monitoring/Model_View_top.jpg");
                 }
-                else{
+                else if (isActive($("#toggle2"))){
                     $(".model_views").attr("src","../static/img/monitoring/Heat_Mode_top.gif");
+
+                }
+                else{
+                    $(".model_views").attr("src","../static/img/simulation/simulation_heat_top.gif");
 
                 }
 
@@ -430,8 +461,12 @@
                 if(isActive($("#toggle1"))){
                     $(".model_views").attr("src","../static/img/monitoring/Model_View_side.jpg");
                 }
-                else{
+                else if (isActive($("#toggle2"))){
                     $(".model_views").attr("src","../static/img/monitoring/Heat_Mode_side.gif");
+
+                }
+                else{
+                    $(".model_views").attr("src","../static/img/simulation/simulation_heat_side.gif");
 
                 }
 
@@ -444,8 +479,12 @@
                 if(isActive($("#toggle1"))) {
                     $(".model_views").attr("src", "../static/img/monitoring/Model_View_raisedfloor.jpg");
                 }
-                else{
+                else if (isActive($("#toggle2"))){
                     $(".model_views").attr("src","../static/img/monitoring/Heat_Mode_raised_floor.gif");
+
+                }
+                else{
+                    $(".model_views").attr("src","../static/img/simulation/simulation_heat_raised_floor.gif");
 
                 }
             });

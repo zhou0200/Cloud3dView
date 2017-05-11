@@ -11,6 +11,13 @@
              $('#form-control_1_3').prop('disabled',true);
 
         }
+
+         else if(option=='Program'){
+             $('#form-control_1_1').prop('disabled',true);
+             $('#form-control_1_2').prop('disabled',true);
+             $('#form-control_1_3').prop('disabled',true);
+
+        }
         else{
              $('#form-control_1_1').prop('disabled',false);
              $('#form-control_1_2').prop('disabled',false);
@@ -28,6 +35,14 @@
              $('#form-control_1_3').prop('disabled',false);
 
             }
+
+            else if(option=='Program'){
+             $('#form-control_1_1').prop('disabled',false);
+             $('#form-control_1_2').prop('disabled',false);
+             $('#form-control_1_3').prop('disabled',false);
+
+            }
+
             else{
              $('#form-control_1_1').prop('disabled',true);
              $('#form-control_1_2').prop('disabled',true);
@@ -43,6 +58,14 @@
              $('#form-control_2_3').prop('disabled',true);
 
         }
+
+         else if(option=='Program'){
+             $('#form-control_2_1').prop('disabled',true);
+             $('#form-control_2_2').prop('disabled',true);
+             $('#form-control_2_3').prop('disabled',true);
+
+        }
+
         else{
              $('#form-control_2_1').prop('disabled',false);
              $('#form-control_2_2').prop('disabled',false);
@@ -60,6 +83,14 @@
              $('#form-control_2_3').prop('disabled',false);
 
             }
+
+            else if(option=='Program'){
+             $('#form-control_2_1').prop('disabled',false);
+             $('#form-control_2_2').prop('disabled',false);
+             $('#form-control_2_3').prop('disabled',false);
+
+            }
+
             else{
              $('#form-control_2_1').prop('disabled',true);
              $('#form-control_2_2').prop('disabled',true);
@@ -75,6 +106,14 @@
              $('#form-control_3_3').prop('disabled',true);
 
         }
+
+        if(option=='Program'){
+             $('#form-control_3_1').prop('disabled',true);
+             $('#form-control_3_2').prop('disabled',true);
+             $('#form-control_3_3').prop('disabled',true);
+
+        }
+
         else{
              $('#form-control_3_1').prop('disabled',false);
              $('#form-control_3_2').prop('disabled',false);
@@ -92,6 +131,14 @@
              $('#form-control_3_3').prop('disabled',false);
 
             }
+
+             else if(option=='Program'){
+             $('#form-control_3_1').prop('disabled',false);
+             $('#form-control_3_2').prop('disabled',false);
+             $('#form-control_3_3').prop('disabled',false);
+
+            }
+
             else{
              $('#form-control_3_1').prop('disabled',true);
              $('#form-control_3_2').prop('disabled',true);
@@ -107,6 +154,14 @@
              $('#form-control_4_3').prop('disabled',true);
 
         }
+
+        else if(option=='Program'){
+             $('#form-control_4_1').prop('disabled',true);
+             $('#form-control_4_2').prop('disabled',true);
+             $('#form-control_4_3').prop('disabled',true);
+
+        }
+
         else{
              $('#form-control_4_1').prop('disabled',false);
              $('#form-control_4_2').prop('disabled',false);
@@ -124,6 +179,14 @@
              $('#form-control_4_3').prop('disabled',false);
 
             }
+
+            else if(option=='Program'){
+             $('#form-control_4_1').prop('disabled',false);
+             $('#form-control_4_2').prop('disabled',false);
+             $('#form-control_4_3').prop('disabled',false);
+
+            }
+
             else{
              $('#form-control_4_1').prop('disabled',true);
              $('#form-control_4_2').prop('disabled',true);
@@ -139,6 +202,14 @@
              $('#form-control_5_3').prop('disabled',true);
 
         }
+
+        else if(option=='Program'){
+             $('#form-control_5_1').prop('disabled',true);
+             $('#form-control_5_2').prop('disabled',true);
+             $('#form-control_5_3').prop('disabled',true);
+
+        }
+
         else{
              $('#form-control_5_1').prop('disabled',false);
              $('#form-control_5_2').prop('disabled',false);
@@ -156,6 +227,14 @@
              $('#form-control_5_3').prop('disabled',false);
 
             }
+
+            else if(option=='Program'){
+             $('#form-control_5_1').prop('disabled',false);
+             $('#form-control_5_2').prop('disabled',false);
+             $('#form-control_5_3').prop('disabled',false);
+
+            }
+
             else{
              $('#form-control_5_1').prop('disabled',true);
              $('#form-control_5_2').prop('disabled',true);
@@ -171,6 +250,14 @@
              $('#form-control_6_3').prop('disabled',true);
 
         }
+
+         else if(option=='Program'){
+             $('#form-control_6_1').prop('disabled',true);
+             $('#form-control_6_2').prop('disabled',true);
+             $('#form-control_6_3').prop('disabled',true);
+
+        }
+
         else{
              $('#form-control_6_1').prop('disabled',false);
              $('#form-control_6_2').prop('disabled',false);
@@ -188,6 +275,14 @@
              $('#form-control_6_3').prop('disabled',false);
 
             }
+
+            else if(option=='Program'){
+             $('#form-control_6_1').prop('disabled',false);
+             $('#form-control_6_2').prop('disabled',false);
+             $('#form-control_6_3').prop('disabled',false);
+
+            }
+
             else{
              $('#form-control_6_1').prop('disabled',true);
              $('#form-control_6_2').prop('disabled',true);

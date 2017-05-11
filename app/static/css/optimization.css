@@ -1,16 +1,9 @@
-.boxed4{
-    font-size: 14px;
-    color:black;
-    font-family: "Arial Black";
-    width:300px;
-    height:100%;
-    border: 2px solid black ;
-    text-align: center;
-    padding: 0;
-    display: block;
-    margin: 0 auto;
-    max-height: 100%;
-    max-width: 100%;
+.text-title{
+    margin-left:5%;
+}
+
+.head-title{
+    margin-left: 27%;
 }
 
 .container-table{
@@ -28,6 +21,20 @@
 
 }
 
+.boxed4{
+    font-size: 14px;
+    color:black;
+    font-family: Arial;
+    width:300px;
+    height:100%;
+    border: 2px solid black ;
+    text-align: left;
+    padding: 0;
+    display: block;
+    margin: 0 auto;
+    max-height: 100%;
+    max-width: 100%;
+}
 
 .boxed5{
     font-size: 14px;
@@ -46,8 +53,10 @@
 }
 
 .op-status{
-    margin-left: 50px;
-    margin-top: 60px;
+    width:100%;
+    margin-top:5%;
+    margin-left: 3%;
+    text-align: center;
 }
 
 #op_01{
@@ -107,3 +116,8 @@ body{margin:40px;}
   line-height: 1.428571429;
   border-radius: 15px;
 }
+
+.add-parameters{
+    margin-left:10%;
+}
+

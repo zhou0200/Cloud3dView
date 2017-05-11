@@ -1,24 +1,29 @@
 .text-title{
-    margin-left:180px;
-;}
+    margin-left:38%;
+}
 
 .head-title{
-    text-align: center;
+    margin-left: 45%;
 }
+
+.head-buttons{
+    margin-left: 48%;
+}
+
+.side-buttons{
+   margin-left: 5%;
+}
+
 .model_views {
     width: 740px;
     height: 400px;
     margin-left: 120px;
     margin-bottom: 20px;
 }
-.side-buttons{
-   margin-left: 20px;
-}
+
 .btn-rounded{
    border-radius: 15px;
 }
-
-
 
 .axis--x path {
     /*display: none;*/
@@ -31,7 +36,6 @@
 }
 
 .curve_chart{
-    width:40px;
 }
 
 .boxed5{
@@ -51,6 +55,24 @@
 }
 
 .system-info{
-    margin-left: 170px;
+    margin-left: 19%;
+    text-align: center;
 
 }
+
+.pics{
+    width:100%
+}
+
+.currentPUE{
+
+}
+
+.leftpanel{
+    /*width:100%;*/
+}
+
+.rightpanel{
+    /*width:100%;*/
+}
+

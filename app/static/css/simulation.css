@@ -1,10 +1,20 @@
 .text-title{
-    text-align: center;
+    margin-left:5%;
 }
 
 .head-title{
-    text-align: center;
+    margin-left: 27%;
 }
+
+.simulation-buttons{
+    margin-left: 30%;
+
+}
+
+.side-buttons{
+   margin-left: 5%;
+}
+
 .model_views{
     width:700px;
     height:380px;
@@ -17,11 +27,11 @@
 .boxed4{
     font-size: 14px;
     color:black;
-    font-family: "Arial Black";
+    font-family: Arial;
     width:300px;
     height:100%;
     border: 2px solid black ;
-    text-align: center;
+    text-align: left;
     padding: 0;
     display: block;
     margin: 0 auto;
@@ -56,6 +66,25 @@
 
 .progressBar{
     width:350px;
-    margin-left: 40px;
+    margin-left: 23%;
 
+}
+
+.simulation-result{
+    margin-left: 32%;
+}
+
+.pics{
+    width:100%
+}
+
+.system-info{
+    width:100%;
+    margin-left: 1%;
+    text-align: center;
+
+}
+
+.add-parameters{
+    margin-left:10%;
 }
