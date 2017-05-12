@@ -37,6 +37,8 @@
 
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script type="text/javascript" src="http://mbostock.github.com/d3/d3.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 
 
 
@@ -96,15 +98,15 @@
                         <!-- Refer Bootstrap navbar doc -->
 
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="blog-2.html">Profile</a></li>
-                                <li><a href="blog-4.html">User Account</a></li>
-                                <li><a href="blog-single.html">Log Out</a></li>
+                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings <b class="caret"></b></a>
+                         <ul class="dropdown-menu">
+                             <li><a href="#">Profile</a></li>
+                             <li><a href="#">User Account</a></li>
+                             <li><a href="index.html">Log Out</a></li>
 
-                            </ul>
-                        </li>
-                        <li><a href="">Welcome: <u><i>Admin </i></u></a></li>
+                         </ul>
+                       </li>
+                    <li><a href="#">Welcome: <u><i>Admin </i></u></a></li>
 
                     </ul>
                 </nav>
@@ -282,52 +284,88 @@
     <div class="stepwizard">
     <div class="stepwizard-row">
     <div class="stepwizard-step">
-        <button type="button" class="btn btn-danger btn-circle">1</button>
-        <p>Training</p>
+        <button type="button" class="btn btn-danger btn-circle" id="button1">1</button>
+        <p>Data Collection</p>
     </div>
     <div class="stepwizard-step">
-        <button type="button" class="btn btn-default btn-circle">2</button>
-        <p>Optimization</p>
+        <button type="button" class="btn btn-default btn-circle" id="button2">2</button>
+        <p>Offline Optimization</p>
     </div>
     <div class="stepwizard-step">
-        <button type="button" class="btn btn-warning btn-circle" disabled="disabled">3</button>
+        <button type="button" class="btn btn-default btn-circle" id="button3">3</button>
         <p>Pilot</p>
     </div>
         <div class="stepwizard-step">
-        <button type="button" class="btn btn-default btn-circle" disabled="disabled">4</button>
+        <button type="button" class="btn btn-warning btn-circle" id="button4">4</button>
+        <p>Simulation</p>
+    </div>
+
+    </div>
+    </div><br><br>
+
+    <div class="op-chart">
+       <img class="eight_loop" src="../static/img/optimization/eight_loop.png">
+
+    </div><br>
+
+    <div class="stepwizard">
+    <div class="stepwizard-row">
+    <div class="stepwizard-step">
+        <button type="button" class="btn btn-warning btn-circle" id="button5">5</button>
+        <p>Simulation Results</p>
+    </div>
+    <div class="stepwizard-step">
+        <button type="button" class="btn btn-default btn-circle" id="button6">6</button>
+        <p>Online Optimization</p>
+    </div>
+    <div class="stepwizard-step">
+        <button type="button" class="btn btn-default btn-circle" id="button7">7</button>
         <p>Execution</p>
     </div>
         <div class="stepwizard-step">
-        <button type="button" class="btn btn-success btn-circle" disabled="disabled">5</button>
-        <p>Result</p>
-    </div>
+        <button type="button" class="btn btn-success btn-circle" id="button8">8</button>
+        <p>New Data Set Output</p>
     </div>
 
     </div>
+    </div>
+    </div>
+    </div>
+
 
 
     <div class="op-status">
-    <div class="boxed5 col-xs-6">
+    <div class="boxed5 col-xs-4">
         <div align="center"><font size="3"><i><b><u>Pilot(Simulation) Result</u></b></i></font></div><br>
-        <i><b><u>PUE Reduction</u></b>: NSCC (National Supercomputing Center) Data Center <br><br>
-        <b><u>Over-heating</u></b>:12 Cresent Road, Singapore 202356 <br><br>
-        <b><u>IT Saving</u></b>: 800 kWh<br><br>
-        <b><u>Cooling Saving</u></b>: 800 kWh</i><br><br><br><br>
+        &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;<div><i><b><u>Data Center Name</u></b>: NSCC (National Supercomputing Center) Data Center </i></div>
+        &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;<div><i><b><u>Current PUE</u></b>: 2.2 </i></div>
+        &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;<div><i><b><u>IT Capacity</u></b>: 800 kWh</i></div>
+        &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;<div><i><b><u>Cooling Capacity</u></b>: 800 kWh</i></div><br><br>
         <img id="op_01" src="../static/img/op_01.png">
     </div>
 
-    <div class="boxed5 col-xs-6">
-        <div align="center"><font size="3"><i><b><u>Execution Result</u></b></i></font></div><br>
-&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<i><b><u>Average PUE Reduction</u></b>: 2%<br><br>
-&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;<b><u>Accum. IT Saving ($)</u></b>: No <br><br>
-&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;<b><u>Accum. Cooling Saving ($)</u></b>: k$ 10 <br><br>
-&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;<b><u>Accum. Total Saving ($)</u></b>: k$ 231</i><br><br><br><br><br>
-          <img id="op_02" src="../static/img/op_02.png">
-
-    </div>
+    <div class="boxed5 col-xs-4">
+        <div align="center"><font size="3"><i><b><u>Pilot(Simulation) Result</u></b></i></font></div><br>
+        &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;<div id="pilot-pue"><i><b><u>PUE Reduction</u></b>: 0% </i></div>
+        &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;<div id="pilot-overheating"><i><b><u>Over-heating</u></b>: No </i></div>
+        &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;<div id="pilot-ITsaving"><i><b><u>IT Saving</u></b>: k$ 0</i></div>
+        &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;<div id="pilot-coolingsaving"><i><b><u>Cooling Saving</u></b>: k$ 0</i></div><br><br><br>
+        <img id="op_02" src="../static/img/op_01.png">
     </div>
 
+    <div class="boxed5 col-xs-4">
+        <div align="center"><font size="3"><i><b><u>Optimization Result</u></b></i></font></div><br>
+&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<div id="op-pue"><i><b><u>Average PUE Reduction</u></b>: 0% </i></div>
+&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;<div id="op-ITsaving"><i><b><u>Accum. IT Saving</u></b>: k$ 0 </i></div>
+&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;<div id="op-coolingsaving"><i><b><u>Accum. Cooling Saving</u></b>: k$ 0 </i></div>
+&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;<div id="op-total"><i><b><u>Accum. Total Saving</u></b>: k$ 0</i></div><br><br><br>
+          <img id="op_03" src="../static/img/op_02.png">
+
+    </div><br><br><br>
+
     </div>
+
+
 
     <!-- jQuery -->
     <script src="../static/js/theme_js/jquery.js"></script>
