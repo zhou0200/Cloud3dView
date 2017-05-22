@@ -49,7 +49,7 @@
 		<header>
             <div class="container">
                 <div class="row">
-                    <div class="col-md-4 col-sm-4">
+                    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4" align="center">
                         <div class="logo">
                             <img class="logo" src="../static/img/logo.png">
                         </div><br>
@@ -121,8 +121,8 @@
 
     <div class="item row">
 
-    <div class="col-xs-4">
-		<div class="text-title">
+    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+		<div class="text-title" align="center">
 
 			<h5>Optimization Control Parameter Setting</h5><br><br>
 
@@ -228,7 +228,7 @@
             <button class="add-parameter" id="add-parameter">Add Parameters</button>
             </div><br>
 
-            <div>
+            <div align="center">
 			<button class="btn btn-danger" id="controls">Commit Controls</button>&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="btn btn-success" id="optimization">Start Optimization</button></div> <br>
 
@@ -269,8 +269,9 @@
 
 
     <!-- system status -->
-    <div class="col-xs-8">
+    <div class="col-sm-12 col-md-8 col-lg-8 col-xl-8">
 
+    <div align="center">
     <h5>Optimization Cycle</h5><br>
 
     <font size="2.5">Duration Selection</font> &nbsp;&nbsp;&nbsp;
@@ -279,7 +280,7 @@
     <option value="1">Last Week</option>
     <option value="2">Last Month</option>
     </select>
-
+    </div>
     <br><br><br>
 
     <div class="stepwizard">
@@ -335,8 +336,10 @@
 
 
 
-    <div class="op-status">
-    <div class="boxed5 col-xs-4">
+    <div class="row">
+
+    <div class="col-sm-10 col-md-4 col-lg-4 col-xl-4" align="center">
+    <div class="boxed5">
         <div align="center"><font size="3"><i><b><u>System Status Before Optimization</u></b></i></font></div><br>
         &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;<div><i><b><u>Data Center Name</u></b>: NSCC (National Supercomputing Center) Data Center </i></div>
         &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;<div><i><b><u>Current PUE</u></b>: 2.2 </i></div>
@@ -344,8 +347,10 @@
         &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;<div><i><b><u>Cooling Capacity</u></b>: 800 kWh</i></div><br><br>
         <img id="op_01" src="../static/img/op_01.png">
     </div>
+    </div>
 
-    <div class="boxed5 col-xs-4">
+    <div class="col-sm-10 col-md-4 col-lg-4 col-xl-4" align="center">
+    <div class="boxed5">
         <div align="center"><font size="3"><i><b><u>Pilot(Simulation) Result</u></b></i></font></div><br>
         &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;<div id="pilot-pue"><i><b><u>PUE Reduction</u></b>: 0% </i></div>
         &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;<div id="pilot-overheating"><i><b><u>Over-heating</u></b>: No </i></div>
@@ -353,8 +358,10 @@
         &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;<div id="pilot-coolingsaving"><i><b><u>Cooling Saving</u></b>: k$ 0</i></div><br><br><br>
         <img id="op_02" src="../static/img/op_01.png">
     </div>
+    </div>
 
-    <div class="boxed5 col-xs-4">
+    <div class="col-sm-10 col-md-4 col-lg-4 col-xl-4" align="center">
+    <div class="boxed5">
         <div align="center"><font size="3"><i><b><u>Optimization Result</u></b></i></font></div><br>
 &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<div id="op-pue"><i><b><u>Average PUE Reduction</u></b>: 0% </i></div>
 &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;<div id="op-ITsaving"><i><b><u>Accum. IT Saving</u></b>: k$ 0 </i></div>
@@ -362,6 +369,7 @@
 &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;<div id="op-total"><i><b><u>Accum. Total Saving</u></b>: k$ 0</i></div><br><br><br>
           <img id="op_03" src="../static/img/op_02.png">
 
+    </div>
     </div><br><br><br>
 
     </div>

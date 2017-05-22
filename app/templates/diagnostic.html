@@ -19,7 +19,7 @@
     <!-- Custom Header CSS -->
     <link href="../static/css/header_style.css" rel="stylesheet">
     <link href="../static/css/main.css" rel="stylesheet">
-    <link href="../static/css/monitoring.css" rel="stylesheet">
+    <link href="../static/css/diagnostic.css" rel="stylesheet">
 
 
 
@@ -54,14 +54,14 @@
 		<header>
 		  <div class="container">
 			<div class="row">
-			  <div class="col-md-4 col-sm-4">
+			 <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4" align="center">
 				<div class="logo">
-                    <img class="logo" src="../static/img/logo.png">
+					<img class="logo" src="../static/img/logo.png">
 				</div><br>
-                  <div class="slogan">
-                      <b><i>Your Savings, Your Earnings</i></b>
-                  </div>
-			  </div>
+				<div class="slogan">
+					<b><i>Your Savings, Your Earnings</i></b>
+				</div>
+			</div>
 
 			  <div class="col-md-5 col-md-offset-3 col-sm-6 col-sm-offset-2">
                     <br><br><br>
@@ -126,8 +126,8 @@
 
    <div class="item row">
 
-        <div class="col-xs-4">
-        <div class="text-title">
+        <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4" align="center">
+        <div class="text-title" align="center">
         <h5>Key Parameter Monitoring</h5><br>
             <font size="4.5">Duration Selection</font> &nbsp;&nbsp;&nbsp;
         <select id="select-time-zone" onchange="draw_curve()">
@@ -149,33 +149,39 @@
         <!-- status charts -->
         <br><br><br><br>
         </div>
-    </div>
+        </div>
 
 
     <!-- head title and top buttons for model/heat view -->
-    <div class="col-xs-8">
-		<div class="head-title"><h4>Diagnostics Environment</h4></div><br>
+    <div class="col-sm-12 col-md-8 col-lg-8 col-xl-8">
+		<div class="head-title" align="center"><h4>Diagnostics Environment</h4></div><br>
         <br>
-        <style>
-            .head-title{
-                margin-left: 40%;
-            }
-            .diagnositcs_views{
-                width:100%;
-                height:450px;
-                margin-left: 17%;
-            }
-        </style>
-
 
         <div>
         <!-- monitoring real time graphs -->
         <div class="col-xs-10">
             <div class="pics">
-                <div class="active_view" id="active_view"><img class="diagnositcs_views" id="diagnositcs_views" src="../static/img/diagnostic/diagnostic.gif">
+                <div class="active_view" id="active_view"><img class="diagnositc_views" id="diagnositc_views" src="../static/img/diagnostic/diagnostic.gif">
                 </div>...
                 .
             </div>
+        </div>
+
+        <div class="system-info">
+            <div class="boxed5 col-sm-6 col-md-6 col-lg=6 col-xs-6" align="center">
+                <div align="center"><font size="3"><i><b><u>System Information:</u></b></i></font></div><br>
+                <i><b><u>Data Center Name</u></b>: NSCC Data Center <br><br>
+                <b><u>Data Center Location</u></b>: 12 Cresent Road, Singapore 202356 <br><br>
+                <b><u>IT Capacity</u></b>: 800 kWh<br><br>
+                <b><u>Cooling Capacity</u></b>: 800 kWh</i><br><br>
+            </div>
+            <div class="boxed5 col-sm-6 col-md-6 col-lg=6 col-xs-6" align="center">
+                <div align="center"><font size="3"><i><b><u>Diagnostic Report:</u></b></i></font></div><br>
+                    <i><b><u>1. Current PUE</u></b>: High <br><br>
+                    <b><u>2. Cold Air By-Passing</u></b>: Yes <br><br>
+                    <b><u>3. Hot/Cold Air Mixing</u></b>: Yes <br><br>
+                    <b><u>4. Kinetic Loss under Raised Floor</u></b>: &nbsp;Identified</i><br><br>
+        </div>
         </div>
 
         <!-- side buttons for top/side/floor view -->

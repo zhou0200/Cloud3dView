@@ -56,14 +56,14 @@
 		<header>
 		  <div class="container">
 			<div class="row">
-			  <div class="col-md-4 col-sm-4">
+			  <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4" align="center">
 				<div class="logo">
-                    <img class="logo" src="../static/img/logo.png">
+					<img class="logo" src="../static/img/logo.png">
 				</div><br>
-                  <div class="slogan">
-                      <b><i>Your Savings, Your Earnings</i></b>
-                  </div>
-			  </div>
+				<div class="slogan">
+					<b><i>Your Savings, Your Earnings</i></b>
+				</div>
+			</div>
 
 			  <div class="col-md-5 col-md-offset-3 col-sm-6 col-sm-offset-2">
                     <br><br><br>
@@ -127,8 +127,8 @@
        <br><br><br>
 
 
-    <div class="leftpanel col-xs-4">
-    <div class="text-title">
+    <div class="leftpanel col-sm-12 col-md-4 col-lg-4 col-xl-4" align="center">
+    <div class="text-title" align="center">
     <h5>Key Parameter Monitoring</h5><br>
         <font size="2.5">Duration Selection</font> &nbsp;&nbsp;&nbsp;
         <select id="select-time-zone" onchange="draw_curve()">
@@ -140,7 +140,7 @@
     <br><br><br><br>
 
 
-    <div class="curve_chart">
+    <div class="curve_chart" align="center">
     <div id="chart_monitor_1"></div>
     <div class="bar" style="height: 20px"></div>
     <div id="chart_monitor_2"></div>
@@ -155,9 +155,9 @@
     </div>
 
     <!-- head title and top buttons for model/heat view -->
-    <div class="rightpanel col-xs-8">
-		<div class="head-title"><h4>Monitoring Environment</h4></div><br>
-		<div class="head-buttons">
+    <div class="rightpanel col-sm-12 col-md-8 col-lg-8 col-xl-8" align="center">
+		<div class="head-title" align="center"><h4>Monitoring Environment</h4></div><br>
+		<div class="head-buttons" align="center">
 			<button type="button" id="toggle1"  class="btn btn-primary active" data-loading-text="Loading ...">Model View</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			<button type="button" id="toggle2"  class="btn btn-primary " data-loading-text="Loading ...">Heat View</button>
 
@@ -174,17 +174,17 @@
             });
 		</script>
 
-		<div>
+		<div align="center">
 			<!-- monitoring real time graphs -->
-			<div class="col-xs-10">
+			<div class="col-sm-10 col-md-10 col-lg=10 col-xs-10">
 				<div class="pics">
 
-                <div class="active_view" id="active_view"><img class="model_views" id="model_views" src="../static/img/monitoring/Model_View_side.jpg"></div>
+                <div class="active_view" id="active_view" align="center"><img class="model_views" id="model_views" src="../static/img/monitoring/Model_View_side.jpg"></div>
 
             </div>
             </div>
 
-            <div class="col-xs-2">
+            <div class="col-sm-2 col-md-2 col-lg=2 col-xs-2">
                 <div class="side-buttons">
                 <br><br><br><br><br>
                 <div><button type="button" id="toggleA" class="btn btn-primary btn-block" data-loading-text="Loading ...">Top View</button></div><br><br>
@@ -195,20 +195,20 @@
 
             <!-- system status -->
             <div class="system-info">
-            <div class="boxed5 col-xs-6">
+            <div class="boxed5 col-sm-6 col-md-6 col-lg=6 col-xs-6" align="center">
                 <div align="center"><font size="3"><i><b><u>System Information:</u></b></i></font></div><br>
                 <i><b><u>Data Center Name</u></b>: NSCC (National Supercomputing Center) Data Center <br><br>
                 <b><u>Data Center Location</u></b>: 12 Cresent Road, Singapore 202356 <br><br>
                 <b><u>IT Capacity</u></b>: 800 kWh<br><br>
                 <b><u>Cooling Capacity</u></b>: 800 kWh</i><br><br>
             </div>
-            <div class="boxed5 col-xs-6">
+            <div class="boxed5 col-sm-6 col-md-6 col-lg=6 col-xs-6" align="center">
                 <div align="center"><font size="3"><i><b><u>Monitoring Status:</u></b></i></font></div><br>
-&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; <i><b><u>Current PUE</u></b>: 2.2 <br><br>
-&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;<b><u>Over-Heating</u></b>: No <br><br>
-&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;<b><u>IT Equipment</u></b>: Normal <br><br>
-&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;<b><u>Cooling Facility</u></b>: Normal</i><br><br>
-&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;<b><u>Hot-Spot Identificaiton</u></b>: NO</i><br><br>
+                    <i><b><u>Current PUE</u></b>: 2.2 <br><br>
+                    <b><u>Over-Heating</u></b>: No <br><br>
+                    <b><u>IT Equipment</u></b>: Normal <br><br>
+                    <b><u>Cooling Facility</u></b>: Normal</i><br><br>
+                    <b><u>Hot-Spot Identificaiton</u></b>: NO</i><br><br>
             </div>
             </div>
             <br><br><br>

@@ -51,14 +51,14 @@
 		<header>
 		  <div class="container">
 			<div class="row">
-			  <div class="col-md-4 col-sm-4">
+			  <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4" align="center">
 				<div class="logo">
-                    <img class="logo" src="../static/img/logo.png">
+					<img class="logo" src="../static/img/logo.png">
 				</div><br>
-                  <div class="slogan">
-                      <b><i>Your Savings, Your Earnings</i></b>
-                  </div>
-			  </div>
+				<div class="slogan">
+					<b><i>Your Savings, Your Earnings</i></b>
+				</div>
+			</div>
 
 			  <div class="col-md-5 col-md-offset-3 col-sm-6 col-sm-offset-2">
                     <br><br><br>
@@ -120,29 +120,30 @@
        <br><br><br>
 
     <!-- chart -->
+       <div class="row">
 
        <!-- first chart -->
-       <div class="first-chart col-xs-4" id="stackedchart">
+       <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4" id="stackedchart">
        <style>
        .axis .domain {
         /*display: none;*/
        }
        </style>
-       <div width="300" height="240" id="stack-chart"></div>
+       <div class="first-chart" align="center" width="300" height="240" id="stack-chart"></div>
        <script src="../static/js/d3.v4.min.js"></script>
        <script src="../static/js/main.js"></script>
        <link rel="stylesheet" href="../static/css/main.css">
        <br><br>
-       <div class="boxed1">
+       <div class="boxed1 ">
            S$ Your Year-to_Date Energy Saving is <br><b><u>$231K</u></b> <br><br>
            Annualized Saving is <b><u>$493K</u></b>
        </div>
        </div>
 
        <!-- second chart -->
-       <div class="second-chart col-xs-4" id="gauge">
+       <div class="second-chart col-sm-12 col-md-6 col-lg-4 col-xl-4"  align="center" id="gauge">
        <span id="pueGaugeContainer"></span>
-       <br><br><br><br><br><br>
+       <br><br><br><br>
        <div class="boxed2">
            Your current PUE is : <div id="PUE"></div><br>
            (Power Usage Effectiveness)
@@ -150,14 +151,17 @@
        </div>
 
         <!-- third chart -->
-        <div class="third-chart col-xs-4" id="pie-chart" width="300" height="240">
+        <div class="third-chart col-sm-12 col-md-6 col-lg-4 col-xl-4" align="center"  id="pie-chart" width="300" height="240">
         <script type="text/javascript" src="../static/js/piechart_drawing.js"></script>
-            <br><br><br>
+            <br><br>
         <div class="boxed3">
            Your current Energy Consumption: <br><br>
             <b><u>%</u></b> breakdown
         </div>
         </div>
+
+        </div>
+
 
 
 

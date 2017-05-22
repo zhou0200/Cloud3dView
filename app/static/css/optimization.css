@@ -40,33 +40,35 @@
     font-size: 14px;
     color:black;
     font-family: Arial;
-    width:30%;
-    height:440px;
+    /*width:30%;*/
+    /*height:440px;*/
     border: 2px solid black ;
     text-align: left;
     padding: 0;
     display: block;
-    margin: 0 auto;
     max-height: 100%;
     max-width: 100%;
-    margin-left: 2.5%;
+    margin-left: 5%;
+    margin-right:5%;
+    margin-top:5%;
+    margin-bottom:5%;
 }
 
-.op-status{
-    width:100%;
-    text-align: center;
-}
+/*.op-status{*/
+    /*width:100%;*/
+    /*text-align: center;*/
+/*}*/
 
 #op_01{
-    width: 390px;
+    width: 100%;
 }
 
 #op_02{
-    width: 390px;
+     width: 100%;
 }
 
 #op_03{
-    width: 390px;
+     width: 100%;
 }
 
 
